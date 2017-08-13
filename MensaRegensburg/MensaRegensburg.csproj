@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Uni\" />
+    <Folder Include="Models\Data\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\Menu\IndexOth.cshtml" />
