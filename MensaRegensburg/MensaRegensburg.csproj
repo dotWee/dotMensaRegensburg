@@ -15,4 +15,18 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0-preview2-final" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Uni\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Menu\IndexOth.cshtml" />
+    <None Remove="Views\Shared\Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Home\About.cshtml" />
+    <Content Remove="Views\Home\Contact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\MenuController.cs" />
+  </ItemGroup>
 </Project>
