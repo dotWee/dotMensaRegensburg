@@ -5,6 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MensaRegensburg.Models;
+using Microsoft.AspNetCore.Server.Kestrel.Internal.System.Collections.Sequences;
+using System.IO;
+using System.Runtime.Serialization.Json;
 
 namespace MensaRegensburg.Controllers
 {
@@ -12,21 +15,8 @@ namespace MensaRegensburg.Controllers
     {
         public IActionResult Index()
         {
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            IndexViewModel model = new IndexViewModel();
+            return View(model);
         }
 
         public IActionResult Error()
