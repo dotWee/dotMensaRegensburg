@@ -13,11 +13,25 @@ namespace MensaRegensburg.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
-        {
-            IndexViewModel model = new IndexViewModel();
+		public IActionResult Index([Bind(Prefix = "id")] string weekdayValue)
+		{
+           
+            IndexViewModel model;
+
+            if (String.IsNullOrWhiteSpace(weekdayValue))
+            {
+                Weekday weekday = Item.ValuesMap.FirstOrDefault(x => x.Value == weekdayValue).Key;
+                model = new IndexViewModel(weekday);
+            }
+
+            else
+            {
+                model = new IndexViewModel(Enum.GetValues(typeof(Weekday)).Cast<Weekday>().ToArray());
+            }
+
+			Console.WriteLine($"id={weekdayValue}");
             return View(model);
-        }
+		}
 
         public IActionResult Error()
         {
