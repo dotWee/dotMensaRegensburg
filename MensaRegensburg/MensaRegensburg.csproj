@@ -21,9 +21,7 @@
     <Content Remove="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Controllers\MenuController.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Models\Data\" />
+    <Folder Include="Views\Menu\" />
   </ItemGroup>
 </Project>

@@ -1,1 +1,91 @@
-﻿
+﻿@model MenuViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br />
+<br />
+<br />
+
+@foreach (Weekday day in Model.MenuMap.Keys)
+{
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4>Speiseplan für @day.ToString()</h4>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Kategorie
+                    </th>
+                    <th>
+                        Label
+                    </th>
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Preis für Studenten
+                    </th>
+                    <th>
+                        Preis für Mitarbeiter
+                    </th>
+                    <th>
+                        Preis für Gäste
+                    </th>
+
+                    <th>
+                        Upvotes
+                    </th>
+                    <th>
+                        Downvotes
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (Item item in Model.GetItems(day))
+                {
+                    <tr>
+                    <th>
+                        @item.name
+                    </th>
+                    <th>
+                        @item.category
+                    </th>
+                    <th>
+                        @item.labels
+                    </th>
+                    <th>
+                        @item.id
+                    </th>
+
+                    <th>
+                        @item.cost.students
+                    </th>
+                    <th>
+                        @item.cost.employees
+                    </th>
+                    <th>
+                         @item.cost.guests
+                    </th>
+
+                    <th>
+                         @item.upvotes
+                    </th>
+                    <th>
+                         @item.downvotes
+                    </th>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
