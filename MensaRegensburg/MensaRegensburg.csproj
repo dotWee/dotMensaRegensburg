@@ -23,4 +23,7 @@
   <ItemGroup>
     <Folder Include="Models\Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MensaRegensburg.Library\MensaRegensburg.Library.csproj" />
+  </ItemGroup>
 </Project>
