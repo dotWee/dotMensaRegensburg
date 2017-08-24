@@ -18,21 +18,9 @@ namespace MensaRegensburg.Models
 
 		public Weekday[] weekdaysToShow { get; }
 
-		public List<Item> GetItems(Weekday weekday)
-		{
-			return MenuMap[weekday].items;
-		}
+		public List<Item> GetItems(Weekday weekday) => MenuMap[weekday].items;
 
-		public int GetPosition(Weekday weekday, Item item)
-		{
-			List<Item> items = GetItems(weekday);
-			int position = items.IndexOf(item);
-
-			// Humans start counting at 1
-			position++;
-
-			return position;
-		}
+		public int GetPosition(Weekday weekday, Item item) => GetItems(weekday).IndexOf(item) + 1;
 
 		private void DownloadMenus()
 		{
