@@ -14,16 +14,16 @@ namespace MensaRegensburg.Models
     [DataContract]
 	public class Item
     {
-        public static Dictionary<Weekday, string> ValuesMap;
+        public static Dictionary<Weekday, string> WeekdayValuesMap;
 
         static Item()
         {
-            ValuesMap = new Dictionary<Weekday, string>();
-			ValuesMap.Add(Weekday.MONDAY, "mo");
-			ValuesMap.Add(Weekday.TUESDAY, "di");
-			ValuesMap.Add(Weekday.WEDNESDAY, "mi");
-			ValuesMap.Add(Weekday.THURSDAY, "do");
-			ValuesMap.Add(Weekday.FRIDAY, "fr");
+            WeekdayValuesMap = new Dictionary<Weekday, string>();
+			WeekdayValuesMap.Add(Weekday.MONDAY, "mo");
+			WeekdayValuesMap.Add(Weekday.TUESDAY, "di");
+			WeekdayValuesMap.Add(Weekday.WEDNESDAY, "mi");
+			WeekdayValuesMap.Add(Weekday.THURSDAY, "do");
+			WeekdayValuesMap.Add(Weekday.FRIDAY, "fr");
         }
 
         public Item()

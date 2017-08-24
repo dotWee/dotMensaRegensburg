@@ -15,21 +15,24 @@ namespace MensaRegensburg.Controllers
     {
 		public IActionResult Index([Bind(Prefix = "id")] string weekdayValue)
 		{
-           
             IndexViewModel model;
 
-            if (String.IsNullOrWhiteSpace(weekdayValue))
+            // If a weekday is named using the asp-route-id tag, return the menu for this specific day
+            if (Item.WeekdayValuesMap.ContainsValue(weekdayValue))
             {
-                Weekday weekday = Item.ValuesMap.FirstOrDefault(x => x.Value == weekdayValue).Key;
+                Weekday weekday = Item.WeekdayValuesMap.FirstOrDefault(x => x.Value == weekdayValue).Key;
                 model = new IndexViewModel(weekday);
-            }
 
+                Debug.WriteLine($"Menu for day={weekday} (weekdayValue={weekdayValue}) requested");
+            }
+        
+            // In case to matching day is named, return the menu for the whole week
             else
             {
                 model = new IndexViewModel(Enum.GetValues(typeof(Weekday)).Cast<Weekday>().ToArray());
+                Debug.WriteLine($"Menu for whole week (weekdayValue={weekdayValue}) requested");
             }
 
-			Console.WriteLine($"id={weekdayValue}");
             return View(model);
 		}
 

@@ -26,7 +26,7 @@ namespace MensaRegensburg.Models
 		{
 			foreach (Weekday weekday in weekdaysToShow)
 			{
-				string value = Item.ValuesMap[weekday];
+				string value = Item.WeekdayValuesMap[weekday];
 
 				string json;
 				using (var webClient = new System.Net.WebClient())
