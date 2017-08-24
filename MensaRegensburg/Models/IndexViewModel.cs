@@ -23,6 +23,17 @@ namespace MensaRegensburg.Models
 			return MenuMap[weekday].items;
 		}
 
+		public int GetPosition(Weekday weekday, Item item)
+		{
+			List<Item> items = GetItems(weekday);
+			int position = items.IndexOf(item);
+
+			// Humans start counting at 1
+			position++;
+
+			return position;
+		}
+
 		private void DownloadMenus()
 		{
 			foreach (Weekday weekday in weekdaysToShow)

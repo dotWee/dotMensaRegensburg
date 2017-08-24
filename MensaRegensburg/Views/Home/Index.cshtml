@@ -19,6 +19,10 @@
             <thead>
                 <tr>
                     <th>
+                        <text>#</text>
+                    </th>
+
+                    <th>
                         <text>Name</text>
                     </th>
                     <th>
@@ -53,7 +57,11 @@
             <tbody>
                 @foreach (Item item in Model.GetItems(day))
                 {
-                    <tr>
+                <tr>
+                    <th>
+                        @Model.GetPosition(day, item)
+                    </th>
+
                     <th>
                         @item.name
                     </th>
