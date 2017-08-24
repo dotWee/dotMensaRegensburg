@@ -1,0 +1,131 @@
+[{
+    "name": "Feine Kräutersuppe",
+    "day": "Mo",
+    "category": "Suppe",
+    "labels": "V",
+    "cost": {
+        "students": "0,60",
+        "employees": "0,80",
+        "guests": "1,30"
+    },
+    "id": 308,
+    "upvotes": 0,
+    "downvotes": 0
+}, {
+    "name": "Crepes mit feinem Gemüse",
+    "day": "Mo",
+    "category": "HG1",
+    "labels": "V",
+    "cost": {
+        "students": "1,90",
+        "employees": "2,70",
+        "guests": "3,50"
+    },
+    "id": 66,
+    "upvotes": 163,
+    "downvotes": 161
+}, {
+    "name": "Gulasch ungarisch mit Bio Nudeln",
+    "day": "Mo",
+    "category": "HG2",
+    "labels": "R",
+    "cost": {
+        "students": "3,00",
+        "employees": "3,80",
+        "guests": "4,50"
+    },
+    "id": 705,
+    "upvotes": 0,
+    "downvotes": 0
+}, {
+    "name": "Hähnchen - Filet - Spieß mit Beilage",
+    "day": "Mo",
+    "category": "HG3",
+    "labels": "G",
+    "cost": {
+        "students": "3,00",
+        "employees": "3,80",
+        "guests": "4,50"
+    },
+    "id": 711,
+    "upvotes": 0,
+    "downvotes": 0
+}, {
+    "name": "Mischgemüse",
+    "day": "Mo",
+    "category": "B1",
+    "labels": "V",
+    "cost": {
+        "students": "0,60",
+        "employees": "0,80",
+        "guests": "1,30"
+    },
+    "id": 299,
+    "upvotes": 0,
+    "downvotes": 0
+}, {
+    "name": "Bio - Reis",
+    "day": "Mo",
+    "category": "B2",
+    "labels": "B,VG",
+    "cost": {
+        "students": "0,70",
+        "employees": "0,90",
+        "guests": "1,40"
+    },
+    "id": 33,
+    "upvotes": 0,
+    "downvotes": 0
+}, {
+    "name": "Bio - Fusilli",
+    "day": "Mo",
+    "category": "B3",
+    "labels": "B,VG",
+    "cost": {
+        "students": "0,70",
+        "employees": "0,90",
+        "guests": "1,40"
+    },
+    "id": 70,
+    "upvotes": 20,
+    "downvotes": 18
+}, {
+    "name": "Salatmix I",
+    "day": "Mo",
+    "category": "B4",
+    "labels": "VG,VG,VG",
+    "cost": {
+        "students": "0,90",
+        "employees": "1,10",
+        "guests": "1,60"
+    },
+    "id": 165,
+    "upvotes": 0,
+    "downvotes": 0
+}, {
+    "name": "Cappuccinopudding",
+    "day": "Mo",
+    "category": "N1",
+    "labels": "V",
+    "cost": {
+        "students": "0,70",
+        "employees": "0,90",
+        "guests": "1,30"
+    },
+    "id": 12,
+    "upvotes": 4,
+    "downvotes": 1
+}, {
+    "name": "Cheescake- Creme",
+    "day": "Mo",
+    "category": "N2",
+    "labels": "V",
+    "cost": {
+        "students": "1,00",
+        "employees": "1,30",
+        "guests": "1,50"
+    },
+    "id": 210,
+    "upvotes": 0,
+    "downvotes": 0
+}]
