@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
-namespace MensaRegensburg.Models
+namespace MensaRegensburg.Library
 {
     public enum Weekday
     {
-
         MONDAY,
         TUESDAY,
         WEDNESDAY,

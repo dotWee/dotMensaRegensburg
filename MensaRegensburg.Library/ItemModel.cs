@@ -1,29 +1,26 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using MensaRegensburg.Library;
 
-namespace MensaRegensburg.Models
+namespace MensaRegensburg.Library
 {
-    [DataContract]
-    public class Menu
-    {
-        [DataMember]
-        public List<Item> items { get; set; }
-    }
-
     [DataContract]
 	public class Item
     {
         public static Dictionary<Weekday, string> WeekdayValuesMap;
+        public static string[] WeekdayValues;
 
         static Item()
         {
+            WeekdayValues = new string[5] { "mo", "di", "mi", "do", "fr" };
+
             WeekdayValuesMap = new Dictionary<Weekday, string>();
-			WeekdayValuesMap.Add(Weekday.MONDAY, "mo");
-			WeekdayValuesMap.Add(Weekday.TUESDAY, "di");
-			WeekdayValuesMap.Add(Weekday.WEDNESDAY, "mi");
-			WeekdayValuesMap.Add(Weekday.THURSDAY, "do");
-			WeekdayValuesMap.Add(Weekday.FRIDAY, "fr");
+			WeekdayValuesMap.Add(Weekday.MONDAY, WeekdayValues[0]);
+			WeekdayValuesMap.Add(Weekday.TUESDAY, WeekdayValues[1]);
+			WeekdayValuesMap.Add(Weekday.WEDNESDAY, WeekdayValues[2]);
+			WeekdayValuesMap.Add(Weekday.THURSDAY, WeekdayValues[3]);
+			WeekdayValuesMap.Add(Weekday.FRIDAY, WeekdayValues[4]);
         }
 
         public Item()

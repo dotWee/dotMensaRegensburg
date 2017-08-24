@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Json;
+using MensaRegensburg.Library;
 
 namespace MensaRegensburg.Models
 {
 	public class IndexViewModel
 	{
-		public string[] WeekdayValues = new string[5] { "mo", "di", "mi", "do", "fr" };
 		public Dictionary<Weekday, Menu> MenuMap { get; set; } = new Dictionary<Weekday, Menu>();
 
 		public IndexViewModel(params Weekday[] arrayOfWeekdaysToShow)
 		{
 			weekdaysToShow = arrayOfWeekdaysToShow;
-			DownloadMenus();
+			
+			foreach (Weekday weekday in weekdaysToShow)
+			{
+				Menu menu = API.GetMenu(weekday);
+				MenuMap[weekday] = menu;
+			}
 		}
 
 		public Weekday[] weekdaysToShow { get; }
@@ -21,30 +26,5 @@ namespace MensaRegensburg.Models
 		public List<Item> GetItems(Weekday weekday) => MenuMap[weekday].items;
 
 		public int GetPosition(Weekday weekday, Item item) => GetItems(weekday).IndexOf(item) + 1;
-
-		private void DownloadMenus()
-		{
-			foreach (Weekday weekday in weekdaysToShow)
-			{
-				string value = Item.WeekdayValuesMap[weekday];
-
-				string json;
-				using (var webClient = new System.Net.WebClient())
-				{
-					json = webClient.DownloadString($"http://132.199.139.24:9001/mensa/uni/{value}");
-				}
-
-				Menu menu = new Menu();
-				using (MemoryStream stream = new MemoryStream(System.Text.Encoding.Default.GetBytes(json)))
-				{
-					DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(List<Item>));
-					List<Item> items = (List<Item>)serializer.ReadObject(stream);
-					menu.items = items;
-				}
-
-				Console.WriteLine($"Downloaded menu for day={value} with count={menu.items.Count}");
-				MenuMap[weekday] = menu;
-			}
-		}
 	}
 }
